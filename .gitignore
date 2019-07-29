@@ -30,3 +30,6 @@ ex02/target/classes/org/zerock/domain/BoardVO.class
 ex02/target/classes/org/zerock/mapper/BoardMapper.class
 ex02/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 ex02/target/test-classes/org/zerock/test/BoardMapperTests.class
+ex02/target/classes/org/zerock/service/BoardService.class
+ex02/target/classes/org/zerock/service/BoardServiceImpl.class
+ex02/target/test-classes/org/zerock/test/BoardServiceTests.class
