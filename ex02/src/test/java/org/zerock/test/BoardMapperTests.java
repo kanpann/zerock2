@@ -17,7 +17,20 @@ import lombok.extern.log4j.Log4j;
 public class BoardMapperTests {
 	@Setter(onMethod_ = @Autowired)
 	private BoardMapper mapper;
-	
+
+	@Test
+	public void dummyInsert(){
+		for(int i = 0; i < 100000; i++){
+			BoardVO board = new BoardVO();
+			board.setTitle(i+"번째 새로 작성하는 글");
+			board.setContent(i+"번째 새로 작성하는 내용");
+			board.setWriter("더미데이터");
+
+			mapper.insert(board);
+		}
+
+	}
+
 	@Test
 	public void testGetList() {
 		mapper.getList().forEach(board -> log.info(board));

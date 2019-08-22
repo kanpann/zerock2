@@ -38,7 +38,7 @@ public class BoardController {
 		
 		return "redirect:/board/list";
 	}
-	@GetMapping("/get")
+	@GetMapping({"/get", "/modify"})
 	public void get(@RequestParam("bno") Long bno, Model model) {
 		log.info("/get");
 		
@@ -46,8 +46,9 @@ public class BoardController {
 	}
 	@PostMapping("/modify")
 	public String modify(BoardVO board, RedirectAttributes rttr) {
+//	public String modify(){
 		log.info("modify : "+board);
-		
+
 		if(service.modify(board)) {
 			rttr.addFlashAttribute("result", "success");
 		}
