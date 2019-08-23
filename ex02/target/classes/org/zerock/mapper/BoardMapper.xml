@@ -33,4 +33,25 @@
 		updateDate = sysdate
 		where bno = #{bno}
 	</update>
+	<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
+	 <![CDATA[
+		SELECT
+			BNO
+		   ,TITLE
+		   ,CONTENT
+		FROM
+			(
+				SELECT
+					/*+ INDEX_DESC(TBL_BOARD PK_BOARD) */
+					ROWNUM AS RN
+				   ,BNO
+				   ,TITLE
+				   ,CONTENT
+				FROM
+					TBL_BOARD
+				WHERE ROWNUM <= #{pageNum} * #{amount}
+			)
+		WHERE RN > (#{pageNum} - 1) * #{amount}
+	 ]]>
+	</select>
 </mapper>
