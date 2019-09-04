@@ -36,17 +36,23 @@
 	<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
 	 <![CDATA[
 		SELECT
-			BNO
-		   ,TITLE
-		   ,CONTENT
+			BNO,
+			TITLE,
+			CONTENT,
+			WRITER,
+			REGDATE,
+			UPDATEDATE
 		FROM
 			(
-				SELECT
-					/*+ INDEX_DESC(TBL_BOARD PK_BOARD) */
-					ROWNUM AS RN
-				   ,BNO
-				   ,TITLE
-				   ,CONTENT
+				SELECT 
+					/*+INDEX_DESC(TBL_BOARD PK_BOARD) */
+					ROWNUM RN,
+					BNO,
+					TITLE,
+					CONTENT,
+					WRITER,
+					REGDATE,
+					UPDATEDATE
 				FROM
 					TBL_BOARD
 				WHERE ROWNUM <= #{pageNum} * #{amount}
