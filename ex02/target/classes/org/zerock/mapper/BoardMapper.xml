@@ -3,6 +3,26 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.zerock.mapper.BoardMapper">
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							writer like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
 	<select id="getList" resultType="org.zerock.domain.BoardVO">
 	<![CDATA[
 		select * from tbl_board where bno > 0
@@ -13,14 +33,17 @@
 		values(seq_board.nextval, #{title}, #{content}, #{writer})
 	</insert>
 	<insert id="insertSelectKey">
-		<selectKey keyProperty="bno" order="BEFORE" resultType="long">
+		<selectKey keyProperty="bno" order="BEFORE"
+			resultType="long">
 			select seq_board.nextval from dual
 		</selectKey>
 		insert into tbl_board(bno, title, content, writer)
-		values(#{bno}, #{title}, #{content}, #{writer})
+		values(#{bno},
+		#{title}, #{content}, #{writer})
 	</insert>
 	<select id="read" resultType="org.zerock.domain.BoardVO">
-		select * from tbl_board where bno = #{bno}
+		select * from tbl_board where bno =
+		#{bno}
 	</select>
 	<delete id="delete">
 		delete from tbl_board where bno = #{bno}
@@ -28,30 +51,55 @@
 	<update id="update">
 		update tbl_board
 		set title = #{title},
-		content = #{content},
+		content =
+		#{content},
 		writer = #{writer},
 		updateDate = sysdate
 		where bno = #{bno}
 	</update>
-	<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
+	<select id="getListWithPaging"
+		resultType="org.zerock.domain.BoardVO">
 	 <![CDATA[
 		SELECT
-			BNO
-		   ,TITLE
-		   ,CONTENT
+			BNO,
+			TITLE,
+			CONTENT,
+			WRITER,
+			REGDATE,
+			UPDATEDATE
 		FROM
 			(
-				SELECT
-					/*+ INDEX_DESC(TBL_BOARD PK_BOARD) */
-					ROWNUM AS RN
-				   ,BNO
-				   ,TITLE
-				   ,CONTENT
+				SELECT 
+					/*+INDEX_DESC(TBL_BOARD PK_BOARD) */
+					ROWNUM RN,
+					BNO,
+					TITLE,
+					CONTENT,
+					WRITER,
+					REGDATE,
+					UPDATEDATE
 				FROM
 					TBL_BOARD
-				WHERE ROWNUM <= #{pageNum} * #{amount}
+				WHERE
+		]]>
+		<include refid="criteria"></include>
+		<![CDATA[
+				  ROWNUM <= #{pageNum} * #{amount}
 			)
 		WHERE RN > (#{pageNum} - 1) * #{amount}
-	 ]]>
+	 	]]>
+	</select>
+	<select id="getTotalCount" resultType="int">
+		<![CDATA[
+		select
+			count(*)
+		from
+			tbl_board
+		where
+		]]>
+		<include refid="criteria"></include>
+		<![CDATA[
+			bno > 0
+		]]>
 	</select>
 </mapper>
