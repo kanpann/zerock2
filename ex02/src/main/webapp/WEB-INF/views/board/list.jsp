@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
@@ -7,7 +7,7 @@
 	<div class="col-lg-12">
 		<h1 class="page-header">Tables</h1>
 	</div>
-	<!-- /.col-lg-12 --> 
+	<!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
 <div class="row">
@@ -21,41 +21,42 @@
 			<!-- /.panel-heading -->
 			<div class="panel-body">
 				<table width="100%"
-					class="table table-striped table-bordered table-hover"
-					id="dataTables-example">
+					   class="table table-striped table-bordered table-hover"
+					   id="dataTables-example">
 					<thead>
-						<tr>
-							<th>#번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>수정일</th>
-						</tr>
+					<tr>
+						<th>#번호</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>수정일</th>
+					</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${list}" var="board">
-							<tr>
-								<td><c:out value="${board.bno}"/></td>
-								<td><a class="move" href="<c:out value='${board.bno}'/>"><c:out value="${board.title}"/></a></td>
-								<td><c:out value="${board.writer}"/></td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd"
-										value="${board.regdate}" /></td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd"
-										value="${board.updateDate}" /></td>
-							</tr>
-						</c:forEach>
+					<c:forEach items="${list}" var="board">
+						<tr>
+							<td><c:out value="${board.bno}"/></td>
+							<td><a class="move" href="<c:out value='${board.bno}'/>"><c:out value="${board.title}"/></a></td>
+							<td><c:out value="${board.writer}"/></td>
+							<td><fmt:formatDate pattern="yyyy-MM-dd"
+												value="${board.regdate}" /></td>
+							<td><fmt:formatDate pattern="yyyy-MM-dd"
+												value="${board.updateDate}" /></td>
+						</tr>
+					</c:forEach>
 					</tbody>
 				</table>
 				<div class="row">
 					<div class="col-lg-12">
 						<form id="searchForm" action="/board/list" method="get">
 							<select name="type">
-								<option value="T">제목</option>
-								<option value="C">내용</option>
-								<option value="W">작성자</option>
-								<option value="TC">제목 or 내용</option>
-								<option value="TW">제목 or 작성자</option>
-								<option value="TCW">제목 or 내용 or 작성자</option>
+								<option value"" <c:out value="${pageMaker.cri.type == null?'selected':''}"/>>
+								<option value"T" <c:out value="${pageMaker.cri.type == 'T'?'selected':''}"/>>
+								<option value"C" <c:out value="${pageMaker.cri.type == 'C'?'selected':''}"/>>
+								<option value"W" <c:out value="${pageMaker.cri.type == 'W'?'selected':''}"/>>
+								<option value"TC" <c:out value="${pageMaker.cri.type == 'TC'?'selected':''}"/>>
+								<option value"TW" <c:out value="${pageMaker.cri.type == 'TW'?'selected':''}"/>>
+								<option value"TWC" <c:out value="${pageMaker.cri.type == 'TWC'?'selected':''}"/>>
 							</select>
 							<input type="text" name="keyword"/>
 							<input type="hidden" name="pageNum" value="<c:out value='${pageMaker.cri.pageNum}'/>"/>
@@ -71,13 +72,13 @@
 								<a href="${pageMaker.startPage - 1 }">Previous</a>
 							</li>
 						</c:if>
-						
+
 						<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
 							<li class="paginate_button">
 								<a href="${num}">${num}</a>
 							</li>
 						</c:forEach>
-						
+
 						<c:if test="${pageMaker.next}">
 							<li class="paginate_button next">
 								<a href="${pageMaker.endPage + 1 }">Next</a>
@@ -100,12 +101,12 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-	aria-labelledby="myModalLabel" aria-hidden="true">
+	 aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"
-					aria-hidden="true">&times;</button>
+						aria-hidden="true">&times;</button>
 				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
 			</div>
 			<div class="modal-body">처리가 완료되었습니다.</div>
@@ -123,13 +124,13 @@
 	$(document).ready(
 			function() {
 				console.log("${pageMaker}");
-				
+
 				var result = '<c:out value="${result}"/>';
 
 				checkModal(result);
 
 				history.replaceState({}, null, null);
-				
+
 				function checkModal(result) {
 					if (result === '' || history.state) {
 						return;
@@ -145,12 +146,12 @@
 					self.location = '/board/register';
 				});
 				var actionForm = $("#actionForm");
-				
+
 				$(".paginate_button a").on("click", function(e){
 					e.preventDefault();
-					
+
 					console.log("click");
-					
+
 					actionForm.find("input[name='pageNum']").val($(this).attr("href"));
 					actionForm.submit();
 				});
@@ -159,6 +160,22 @@
 					actionForm.append("<input type='hidden' name='bno' value='"+$(this).attr("href")+"'>");
 					actionForm.attr("action", "/board/get");
 					actionForm.submit();
+				});
+				var searchForm = $("#searchForm");
+
+				$("#searchForm button").on("click",function(e){
+					if(!searchForm.find("option:selected").val()){
+						alert("검색종류를 선택하세요");
+						return false;
+					}
+					if(!searchForm.find("input[name='keyword']").val()){
+						alert("키워드를 입력하세요");
+						return false;
+					}
+					searchForm.find("input[name='pageNum']").val("1");
+					e.preventDefault();
+
+					searchForm.submit();
 				});
 			});
 </script>
