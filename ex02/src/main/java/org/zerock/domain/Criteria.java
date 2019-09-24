@@ -29,6 +29,6 @@ public class Criteria {
     }
     public String getListLink(){
         UriComponentsBuilder builder = UriComponentsBuilder.fromPath("").queryParam("pageNum", this.getPageNum()).queryParam("amount",this.getAmount()).queryParam("type", this.getType()).queryParam("keyword", this.getKeyword());
-        return builder.toString();
+        return builder.toUriString();
     }
 }
