@@ -13,9 +13,9 @@
 <script src="/resources/vendor/metisMenu/metisMenu.min.js"></script>
 
 <!-- DataTables JavaScript -->
-<script src="/resources/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/resources/vendor/datatables/js/jquery.dataTables.js"></script>
 <script
-	src="/resources/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+	src="/resources/vendor/datatables-plugins/dataTables.bootstrap.js"></script>
 <script
 	src="/resources/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
