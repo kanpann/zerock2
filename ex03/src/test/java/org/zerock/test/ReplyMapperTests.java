@@ -18,7 +18,7 @@ import lombok.extern.log4j.Log4j;
 @ContextConfiguration(classes = { org.zerock.config.RootConfig.class })
 @Log4j
 public class ReplyMapperTests {
-	private Long[] bnoArr = { 100081l, 100079l, 100078l, 100077l, 100076l };
+	private Long[] bnoArr = { 1l, 4l, 5l, 6l, 7l };
 
 	@Setter(onMethod_ = @Autowired)
 	private ReplyMapper mapper;
@@ -67,8 +67,8 @@ public class ReplyMapperTests {
 //			ReplyVO vo = new ReplyVO();
 //			vo.setBno(bnoArr[i % 5]);
 //			vo.setReply("댓글 테스트" + i);
-//			vo.setReplyer("replyer"+i);
-//			
+//			vo.setReplyer("replyer" + i);
+//
 //			mapper.insert(vo);
 //		});
 //	}
