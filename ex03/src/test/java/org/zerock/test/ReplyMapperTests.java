@@ -18,7 +18,7 @@ import lombok.extern.log4j.Log4j;
 @ContextConfiguration(classes = { org.zerock.config.RootConfig.class })
 @Log4j
 public class ReplyMapperTests {
-	private Long[] bnoArr = { 1l, 4l, 5l, 6l, 7l };
+	private Long[] bnoArr = { 100081l, 100079l, 100078l, 100077l, 100076l };
 
 	@Setter(onMethod_ = @Autowired)
 	private ReplyMapper mapper;
