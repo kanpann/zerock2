@@ -1,13 +1,12 @@
 package org.zerock.test;
 
-import java.util.List;
+import java.util.stream.IntStream;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.zerock.domain.Criteria;
 import org.zerock.domain.ReplyVO;
 import org.zerock.mapper.ReplyMapper;
 
@@ -27,14 +26,21 @@ public class ReplyMapperTests {
 	public void testMapper() {
 		log.info(mapper);
 	}
-	@Test
-	public void testList() {
-		Criteria cri = new Criteria();
-		
-		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
-		 
-		replies.forEach(reply -> log.info(reply));
-	}
+//	@Test
+//	public void testList2() {
+//		Criteria cri = new Criteria(2, 10);
+//		List<ReplyVO> replies = mapper.getListWithPaging(cri, 100081l);
+//		
+//		replies.forEach(reply -> log.info(reply));
+//	}
+//	@Test
+//	public void testList() {
+//		Criteria cri = new Criteria();
+//		
+//		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
+//		 
+//		replies.forEach(reply -> log.info(reply));
+//	}
 //	@Test
 //	public void testUpdate() {
 //		Long targetRno = 10L;
@@ -61,15 +67,15 @@ public class ReplyMapperTests {
 //		log.info(vo);
 //	}
 
-//	@Test
-//	public void testCreate() {
-//		IntStream.rangeClosed(1, 10).forEach(i -> {
-//			ReplyVO vo = new ReplyVO();
-//			vo.setBno(bnoArr[i % 5]);
-//			vo.setReply("댓글 테스트" + i);
-//			vo.setReplyer("replyer" + i);
-//
-//			mapper.insert(vo);
-//		});
-//	}
+	@Test
+	public void testCreate() {
+		IntStream.rangeClosed(1, 200).forEach(i -> {
+			ReplyVO vo = new ReplyVO();
+			vo.setBno(100081l);
+			vo.setReply("댓글 테스트" + i);
+			vo.setReplyer("replyer" + i);
+
+			mapper.insert(vo);
+		});
+	}
 }

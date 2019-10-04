@@ -1,0 +1,198 @@
+[33mcommit 1f0e4a9e5f4d1b6254b03ad0645cebb6512f88ee[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Tue Oct 1 15:22:09 2019 +0900
+
+    댓글 처리 js 생성 중
+
+[33mcommit 2d636a74db9968cb8ee41011a2001d5daf3b7b38[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Tue Oct 1 08:12:52 2019 +0900
+
+    Rest Controller 만드는중
+
+[33mcommit 48a505abf125bfc0b7058781a69122e38b79671f[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Mon Sep 30 20:40:30 2019 +0900
+
+    댓글 처리 중
+
+[33mcommit 8ced5bd04f8461ecae9406362b692a1b2c9a2dd5[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Sun Sep 29 21:24:20 2019 +0900
+
+    REST 예제 끝
+
+[33mcommit 7b6f3e7e1aad0a9df9e9507fd2a9b2cb3a699d4a[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Sun Sep 29 16:39:48 2019 +0900
+
+    ajax 실습중
+
+[33mcommit cb382421f05801914797c46719201c6c48d6010a[m
+Merge: 80ba176 a7e1a87
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Wed Sep 25 00:03:32 2019 +0900
+
+    Merge branch 'master' of https://github.com/gunkim0318/zerock2
+
+[33mcommit 80ba176acb49c4851f901e6daeabdb277d1d8d92[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Wed Sep 25 00:03:10 2019 +0900
+
+    rest 연습중
+
+[33mcommit a7e1a87eb09fce82830bf7cbdd292e34881e63ef[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Mon Sep 16 12:59:26 2019 +0900
+
+    URI 수정
+
+[33mcommit e345c459c85fc4b4ab7348d80e91ce9052484606[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Sun Sep 15 17:47:00 2019 +0900
+
+    Uri 생성 객체 추가
+
+[33mcommit 806304ad62f1455a2db977b08cedde7b93650859[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Sun Sep 15 16:43:29 2019 +0900
+
+    페이지 이동 처리 완료
+
+[33mcommit 25c82207b06364cfcb2c72df98f0def557d3d4d4[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Sun Sep 15 00:28:01 2019 +0900
+
+    '리스트'
+
+[33mcommit 8cd380260f9e05c74ffe8aa83397e387bd4f96d2[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Thu Sep 12 12:52:06 2019 +0900
+
+    뭐했지..
+
+[33mcommit 55bf47151b30fc07d6ed982cfd78f9fe5b6efff7[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Tue Sep 10 00:22:02 2019 +0900
+
+    검색 처리 중
+
+[33mcommit c2d2855d62599e2232ed2bf745d50f30e4a13b0b[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Mon Sep 9 17:08:49 2019 +0900
+
+    페이징 처리 및 검색 처리중
+
+[33mcommit cd2eb92c80ce01e016ae6ae290439648c2a4b17c[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Thu Sep 5 17:05:06 2019 +0900
+
+    list get수정
+
+[33mcommit ee6dfd446c88e5dadf85fc9f4dcf6ff2b9b50e71[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Thu Sep 5 00:25:25 2019 +0900
+
+    페이징 처리 수정 완료
+
+[33mcommit 96eb19893556ceeb0376f1ef43fbb0d4c001f5e4[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Wed Sep 4 17:50:57 2019 +0900
+
+    페이징 수정
+
+[33mcommit cf118a8489a85db3fca0ca162e9c96fe161b8160[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Wed Sep 4 17:46:20 2019 +0900
+
+    페이징 처리 수정
+
+[33mcommit 8377fa11c6d91585ba47103e4eeaaed66c6f0133[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Tue Sep 3 10:35:18 2019 +0900
+
+    xml sql 추가
+
+[33mcommit 8294a89245ad172d20984c1a7b3440433b1016dd[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Fri Aug 23 17:29:17 2019 +0900
+
+    페이징 처리
+
+[33mcommit 2f5500518842d7dd98f41d604914a6cce74b7407[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Thu Aug 22 21:32:21 2019 +0900
+
+    수정/삭제 완료
+
+[33mcommit ecb424cff4bb41176b5deac26e188de28e33ce8d[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Wed Aug 21 23:45:47 2019 +0900
+
+    화면 수정
+
+[33mcommit 69cde529589db6934b268197eb227c6352e6a1c4[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Sat Aug 17 23:17:13 2019 +0900
+
+    중간 저장
+
+[33mcommit 8dde9e2532b0db3b010bad1a891cf255023ef184[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Sun Aug 11 23:49:12 2019 +0900
+
+    화면단 만드는 중
+
+[33mcommit 05c4f6a3ff2863f13435806496886aac6a9a28b2[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Sun Aug 11 22:10:50 2019 +0900
+
+    화면단 개발중
+
+[33mcommit 403e631cc7dc65081b05f5102592ef3405e92e7e[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Thu Aug 1 00:54:54 2019 +0900
+
+    파트3 백단 완성
+
+[33mcommit 7bace6fa78bdd7d30884ce7ff4c8a41bf2ad4534[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Wed Jul 31 00:19:43 2019 +0900
+
+    파트3
+
+[33mcommit 12f82b36d2db571b4ad2ede2006e9530420fd13b[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Tue Jul 30 02:00:06 2019 +0900
+
+    파트3 서비스 완성
+
+[33mcommit 777b0977c15089e73c45885c353ed3b9b65d9171[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Mon Jul 29 17:45:04 2019 +0900
+
+    파트3 중간 업로드
+
+[33mcommit be17bc21686f61653d40d91c84c6e40068c18cac[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Mon Jul 29 13:08:55 2019 +0900
+
+    파트2 완성
+
+[33mcommit 4485c868ef1000c4ce74e389cf7e4e778bfe0581[m
+Author: gunkim0318 <gunkim0318@gmail.com>
+Date:   Mon Jul 29 00:22:53 2019 +0900
+
+    파트2 진행중
+
+[33mcommit 4f687c1857ce2d9db7352c154f26fc5f46f73c64[m
+Author: gunkim <gunkim0318@gmail.com>
+Date:   Fri Jul 26 17:00:59 2019 +0900
+
+    파트2 거의 완성
+
+[33mcommit ca99a17cc7dfa95c3122c414a3e477a4e3a915c0[m
+Author: = <gunkim0318@gmail.com>
+Date:   Thu Jul 25 17:47:56 2019 +0900
+
+    파트1 완성
